@@ -30,7 +30,9 @@ the observed list is usually shorter and more surprising than people expect.
 
 **Archive uploads** — `source_uploads_enabled` — are a different switch, and the
 two ZIP routes are **not** among the seven enforcement points. Turning the source
-policy on does not stop somebody uploading a folder.
+policy on does not stop somebody uploading a folder. Publishing from RStudio is an
+upload too, so this switch governs it — see
+[Publishing from RStudio](../../capabilities/rstudio-publishing/).
 
 **Extensions-only mode** restricts the gallery, not the source policy.
 

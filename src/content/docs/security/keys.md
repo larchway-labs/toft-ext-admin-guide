@@ -38,8 +38,10 @@ means now** — existing keys stop working immediately, with no cache to wait ou
 Admin → API keys shows every personal key on the install and lets you revoke any
 of them. A person's own page shows theirs.
 
-The CLI's device flow mints one, with the browser session as the authorization.
-Nobody pastes a token.
+The CLI's device flow creates one, with the browser session as the
+authorization. Nobody pastes a token. RStudio's Add account dialog goes through
+the same approval page and creates one named **RStudio (rsconnect)** — see
+[Publishing from RStudio](../../capabilities/rstudio-publishing/).
 
 ## App keys
 

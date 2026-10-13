@@ -131,6 +131,7 @@ export default defineConfig({
             { label: "Integrations", slug: "capabilities/integrations" },
             { label: "Email and notifications", slug: "capabilities/email" },
             { label: "Announcements and messages", slug: "capabilities/announcements" },
+            { label: "Publishing from RStudio", slug: "capabilities/rstudio-publishing" },
             { label: "The gallery", slug: "capabilities/gallery" },
             { label: "Documentation", slug: "capabilities/documentation" },
             { label: "Telemetry", slug: "capabilities/telemetry" },
