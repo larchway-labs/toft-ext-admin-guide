@@ -12,7 +12,10 @@ runs. Apps run in **shared mode** — as processes on that machine, bound to
 loopback.
 
 The right choice for a team, a department, or a first install. One machine to
-back up and one thing to upgrade.
+back up and one thing to upgrade. [Jobs](../../operate/automation/#where-a-job-runs)
+and [batch apps](../../operate/automation/#batch-apps-only-jobs) run here too, on
+the same machine, under the app's own account — with a memory limit that is a
+sampled watchdog rather than a boundary.
 
 The bundle is published to its own public repository and is what a customer
 installs. It runs on loopback and expects a proxy or an SSH tunnel in front of

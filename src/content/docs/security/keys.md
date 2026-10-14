@@ -75,6 +75,12 @@ is recorded in the audit log as that key, by name.
 change a permission, add a provider, connect a git host, or alter who can see
 what.
 
+**That includes pointing an app at a connected git host.** Choosing a connection
+for an app is a credential decision, so a **personal key and a deploy key alike**
+are refused with a 403 `session_required` — before anything is written, so no app
+is created and none is re-pointed. Do it in the UI, as a person; a pipeline
+deploys from a repository the connection already covers.
+
 It **fails closed**, and a test walks the router: a route that forgot to declare
 itself is not reachable by a key at all.
 

@@ -14,7 +14,7 @@ explains why it is empty, not a button that raises a support ticket.
 - No artifact store configured → the routes 404 and nothing appears in the UI.
 - No isolated backend → the mode is not offered.
 - No app storage → there is no storage on an app.
-- No jobs → no jobs.
+- No jobs → no jobs. (No *cluster* is not no jobs: a run can be placed on the platform's own machine.)
 
 ## Why
 
@@ -66,7 +66,7 @@ made, and you are entitled to see what you do not have.
 | [Telemetry](../telemetry/) | A collector endpoint |
 | [The artifact store](../../apps/artifact-store/) | `ARTIFACT_*` |
 | Isolated execution | A cluster or an ECS cluster |
-| Jobs | The isolated backend, plus a switch |
+| [Jobs](../../operate/automation/#where-a-job-runs) | A switch, and somewhere to run: the isolated backend, or the platform's own machine |
 | [Reachability](../../security/reachability/) | `PRESENCE_ENDPOINT` |
 | [Dependency policy](../../security/dependencies/) | A switch, and a feed |
 | [Connected git hosts](../../security/git-connections/) | A connection |

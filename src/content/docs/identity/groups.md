@@ -19,6 +19,18 @@ holds no API keys and owns no credential. When something has to act, that is a
 **An app is owned by a user or a group — never both, never neither.** There is no
 unowned app and no co-ownership. Transferring to a group transfers it entirely.
 
+## Who may change a roster
+
+Membership is authorization — a group can hold grants and own apps — so changing
+it needs at least the authority it confers. **An administrator, or a publisher who
+is already a member of that group.** Membership is read from the database, not the
+session, so removing someone takes effect on their next request. A publisher
+outside the group is answered *group not found* on add and remove, whatever the
+group's name.
+
+A publisher who **creates** a group is made its first member, so they are not
+locked out of the group they just made.
+
 ## What a group can hold
 
 Grants on apps, at any of the three rungs, and storage access. Everything a

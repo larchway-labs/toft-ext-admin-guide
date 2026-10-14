@@ -65,7 +65,9 @@ per-job-definition CPU. Those numbers are the operator's.
 
 ## The resource envelope
 
-Install-wide. CPU applies in isolated mode only; memory applies in both.
+Install-wide. CPU applies in isolated mode only; memory applies in both. A job run on
+the platform's own machine has its memory limit enforced by sampling, not by the
+kernel (see [where a job runs](../../operate/automation/#where-a-job-runs)).
 
 A CPU **ceiling** is off by default, and that is deliberate: over its memory
 limit a workload is killed, but over a CPU limit it is merely throttled — which

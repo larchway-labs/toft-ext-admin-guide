@@ -6,7 +6,7 @@ description: Every system check, its category, and what each status means.
 The registry, in the order the report produces it. **The list is the
 specification**: a test walks it, so a check cannot silently stop running.
 
-Several of these emit more than one row; the rows keep their own ids.
+Twenty-six checks, in nine categories. Several of these emit more than one row; the rows keep their own ids.
 
 | Check | Category | What it reads |
 |---|---|---|

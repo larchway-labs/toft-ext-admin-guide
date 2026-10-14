@@ -86,9 +86,14 @@ app page, to the CLI, and to a visitor at the app’s URL.</p>
 next. <code dir="auto">app_locked_message</code> on Admin → Messages is the install’s default copy for
 the visitor-facing layer.</p>
 <div class="sl-heading-wrapper level-h2"><h2 id="what-it-blocks">What it blocks</h2><a class="sl-anchor-link" href="#what-it-blocks"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “What it blocks”</span></a></div>
-<p>Eight enforcement points — deploying, starting, changing visibility, running
+<p>Ten enforcement points — deploying, starting, changing visibility, running
 jobs, <strong>rolling back</strong>, and the rest — and the list is the specification. A
 refusal is <strong>409</strong> and carries your message.</p>
+<p><strong>Jobs are on that list in every form.</strong> A locked app’s schedule, its queued runs
+and its runs in flight are all held: a start is refused, a run queued before the
+lock is cancelled at dispatch, and one already running is cancelled by the jobs
+sweep — whether you or the dependency policy placed the lock. Before this, only
+the doors a person uses were closed, and a locked app’s nightly job kept running.</p>
 <p>Rollback is on that list for the same reason a deploy is: it changes what would
 be served the moment the app came back. A lock has to hold the app <em>and</em> the
 release it would return to.</p>

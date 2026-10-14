@@ -28,8 +28,17 @@ One workload per app, each in its own container with its own network policy.
 - A crashing workload is restarted a **bounded** number of times and then told
   that it has stopped being restarted, rather than looping forever.
 
-Isolated mode is what [jobs](../../operate/automation/) need: a job runs in its
-own container with its own memory limit, never in the app's process.
+[Jobs](../../operate/automation/) do **not** need an app to be isolated, or the
+install to have a cluster. A job always runs in a process of its own with its own
+memory limit, never in the app's process; **where** is the install's decision, not
+the app's. With isolated execution available it is a pod. Without it, it is a
+process group on the platform's own machine under the app's OS account — with a
+memory limit that is a sampled watchdog rather than a boundary, which is the
+difference isolated mode buys.
+
+An app with **no service at all** — a [batch app](../../operate/automation/#batch-apps-only-jobs),
+declared with `[batch]` — has neither mode's long-running workload. It is `ready`
+rather than `running`, and its jobs are placed as above.
 
 ## Per-app OS accounts, in shared mode
 

@@ -7,7 +7,11 @@ Admin is four groups, and **each names what you are doing rather than what the
 page is about**. A new page joins the group whose question it answers.
 
 `⌘K` reaches all of them by name, and every setting on them by its words in
-any order.
+any order. It offers what the sidebar shows and nothing else: where the install
+has no storage, **neither lists Admin → Storage** — the item is absent until the
+install answers that it has one, rather than leading to a page that explains
+itself away. (The palette asks only for an administrator, whom the route would
+otherwise refuse.)
 
 ## Overview — what is happening on this machine right now
 
@@ -48,7 +52,7 @@ any order.
 |---|---|
 | **[Authentication](../../identity/providers/)** | How people sign in, and what happens to an account nobody uses. |
 | **[Sources](../../security/sources/)** | Which repositories this install will deploy from at all. |
-| **[Dependencies](../../security/dependencies/)** | Which third-party packages this install will run, and what it found. |
+| **[Dependencies](../../security/dependencies/)** | Which third-party packages this install will run, and what it found — advisories as a table, one row each. |
 | **[Publisher requests](../../identity/users-and-roles/)** | People asking to be allowed to deploy. |
 | **[Reach](../../apps/reach/)** | What each app holds, and which apps hold each thing. |
 | **[Compliance](../../security/compliance/)** | What this install tells an assessor, and the evidence behind it. |
@@ -57,6 +61,30 @@ any order.
 | **[Deploy keys](../../security/keys/)** | Credentials a pipeline holds, which belong to nobody and outlive whoever made them. |
 | **[Activity](../../security/audit/)** | What people did, and what broke without anyone doing it. |
 | **[Integration log](../../capabilities/integrations/)** | Every message an app has sent, with its recipients in full. |
+
+## Absent, not disabled
+
+Where a control cannot work on this install, the page leaves it out rather than
+showing it greyed with a reason beside it.
+
+- **Admin → Storage** is not in the sidebar or in `⌘K` on an install with no
+  storage.
+- **Admin → Settings**, on an install that can never isolate an app (one machine,
+  no cluster), drops **Background jobs, New apps are born, CPU reserved per app and
+  CPU ceiling per app**. The Isolated execution row stays and gives the one
+  explanation. Where isolation is possible, Background jobs says where runs
+  execute — see [where a job runs](../../operate/automation/#where-a-job-runs).
+- **An app's Settings** leaves out its Isolated execution block for a shared app on
+  an install with no isolation, and for a reader who may not choose; an isolated
+  app always shows it.
+- **An app's Access tab** warns about install reachability for a **confirmed**
+  failure only. An *unknown* verdict about the whole install is nothing an app owner
+  can act on, and it used to show on every public app.
+
+Sessions, Unused accounts and the integration log's retention each save one number
+on their own, because the server's warning belongs to the field that caused it; their
+Save button now appears once the number has been edited, instead of sitting disabled
+beside every field.
 
 ## Three redirects
 

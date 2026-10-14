@@ -46,6 +46,16 @@ The checks page has a **clone credentials** row:
 That is the row that stops a token expiring quietly and taking every deploy with
 it on a Monday morning.
 
+## Only a person attaches one
+
+Pointing an app at a connection is done from a signed-in session, never with a
+key. A **personal key** and a **deploy key** are both refused (403
+`session_required`) before anything is written, so a CI pipeline cannot create an
+app on your credential or re-point one at it. Any signed-in person may attach — no
+role gates it — because the boundary is the one you drew: the connection has to
+cover the repository, and a request for one it does not cover is refused naming
+both. See [keys](../keys/).
+
 ## Disable versus remove
 
 **Disable is immediate and unrefusable.** You can always stop using a source right

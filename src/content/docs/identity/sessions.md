@@ -47,6 +47,23 @@ Two properties worth knowing:
 You can also lock an account, which stops sessions and keys together — see
 [Offboarding](../offboarding/).
 
+## Where sign-in lands
+
+The page you were sent from is validated **on the server**, by one rule for
+password sign-in and every provider's callback, and the browser is only ever sent
+to the validated destination — never to the value it supplied. Accepted: a path on
+this install, or an address on an origin it already trusts (its own, and the apps
+address, so signing in from a protected app lands back on it). Refused, and the
+person lands on `/` instead:
+
+- anything that leaves the site, including `//host` and `/\host`;
+- **a control character anywhere in the value**. A tab or newline inside the
+  leading slashes is removed by a browser's URL parser, which turned `/<tab>/host`
+  into `//host`; refusing the character is what closes that.
+
+Password sign-in and password change now return the destination they validated
+and the login page navigates to that.
+
 ## What to set
 
 There is no universally right answer, and the defaults are reasonable. Two

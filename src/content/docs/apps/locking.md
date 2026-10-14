@@ -32,9 +32,15 @@ the visitor-facing layer.
 
 ## What it blocks
 
-Eight enforcement points — deploying, starting, changing visibility, running
+Ten enforcement points — deploying, starting, changing visibility, running
 jobs, **rolling back**, and the rest — and the list is the specification. A
 refusal is **409** and carries your message.
+
+**Jobs are on that list in every form.** A locked app's schedule, its queued runs
+and its runs in flight are all held: a start is refused, a run queued before the
+lock is cancelled at dispatch, and one already running is cancelled by the jobs
+sweep — whether you or the dependency policy placed the lock. Before this, only
+the doors a person uses were closed, and a locked app's nightly job kept running.
 
 Rollback is on that list for the same reason a deploy is: it changes what would
 be served the moment the app came back. A lock has to hold the app *and* the

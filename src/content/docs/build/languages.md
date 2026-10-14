@@ -27,14 +27,23 @@ before anybody installs anything:
 
 | | What the platform image carries | Default |
 |---|---|---|
-| Python | 3.14, 3.13, 3.12 | 3.14 |
-| Node | 24, 22, 20 | 24 |
-| Go | the image's own, plus 1.26.7 and 1.25.14 | the image's own |
-| R | the distribution's, plus 4.4 and 4.3 | the distribution's |
+| Python | 3.15, 3.14, 3.13 | 3.15 |
+| Node | 24, 22 (22.23.3), 20 | 24 |
+| Go | the image's own (1.27), plus 1.26.9 and 1.25.14 | the image's own |
+| R | 4.6 (4.6.1), 4.5 and 4.4 | 4.6 |
 
 Highest first, in every case — the probe takes the first entry as the family's
-default. Quarto is in the same image as of 0.5.0; there is no separate
-`-quarto` tag to choose between any more.
+default. Quarto (1.10.19) is in the same image; there is no separate `-quarto`
+tag to choose between.
+
+**Python 3.12 and R 4.3 are no longer offered.** An app pinned to either is
+refused by name at its next deploy, and has to move up; one already running keeps
+running until then (see [Retiring a version](#retiring-a-version)).
+
+**R comes from Posit's builds, not the distribution's.** Every R in both images is
+Posit's build for Debian 13, installed under `/opt/R/<version>` with the newest on
+`PATH` as the default. The image carries no distribution R, so there is no
+undeclared fourth interpreter at `/usr/bin/Rscript`.
 
 Your own final image is yours to compose, and dropping entries from one
 variable is how you offer fewer.
@@ -42,8 +51,8 @@ variable is how you offer fewer.
 ## What a developer may ask for
 
 **Comparators only**, and **never a patch version**. A pin naming a patch is
-**refused rather than truncated** — `3.12.4` is an error, not a slow way of
-saying `3.12`.
+**refused rather than truncated** — `3.13.4` is an error, not a slow way of
+saying `3.13`.
 
 **A version is refused, never approximated.** An app asking for something you do
 not have fails its deploy and is told what exists. It is never silently placed on
@@ -96,8 +105,8 @@ one that has not.
 **renv's cache is off**, deliberately. renv's default fills a library with links
 into a machine-global cache, and those links dangle in every pod.
 
-**A library is stamped with the R series it was built for.** Restoring a 4.4
-library into a 4.5 release is refused rather than half-loading.
+**A library is stamped with the R series it was built for.** Restoring a 4.5
+library into a 4.6 release is refused rather than half-loading.
 
 **Both launchers point R at its library**, shared and isolated alike.
 

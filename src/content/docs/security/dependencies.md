@@ -30,6 +30,19 @@ shown and enforced. Its absence of findings is not a verdict.
 The inventory is written **before** any of the questions is asked, so an app's
 packages are known even where the answers are not.
 
+## A lockfile Launchpad does not read is named
+
+Every Node path here — the scan, the shared-mode install and the runner's — reads
+`package-lock.json`. An app that locks with **`pnpm-lock.yaml`** or **`yarn.lock`**
+is therefore scanned and built from versions resolved fresh out of `package.json`,
+which can differ from the ones its own lockfile pins, and on a later build.
+
+The deploy is **not refused**. Its build log names the file that was passed over
+and says the installed versions can differ from the pinned ones. The inventory is
+not wrong — it is read from the same file the install reads — but a developer
+looking at a lockfile in their repository should not be told there is none.
+Whether to read those lockfiles properly is still open.
+
 ## Malware is not a severity
 
 It is not "critical plus a bit". A package identified as malicious is a different
@@ -144,7 +157,9 @@ A subcommand that talks to Postgres and exits.
 ## The governance view
 
 Admin → Dependencies is the estate's: what this install runs, searchable, with
-findings. It is **admin-only, never answers less than it knows, and carries its
+findings. The advisories are a **table**, one row per advisory — its ID linking to
+the advisory with the summary under it, then severity, the apps it touches, the
+fixed-in version and how many serving apps carry it. It is **admin-only, never answers less than it knows, and carries its
 own coverage** — so a report drawn from it says what it did not cover rather than
 implying it covered everything.
 

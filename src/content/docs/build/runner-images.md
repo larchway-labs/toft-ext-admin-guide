@@ -26,9 +26,9 @@ and `warn` for one pinned to `latest` or to no tag at all.
 ## What an image carries is a set
 
 ```
-RUNNER_PYTHON_VERSION=3.14,3.13,3.12
+RUNNER_PYTHON_VERSION=3.15,3.14,3.13
 RUNNER_NODE_VERSION=24,22,20
-RUNNER_R_VERSION=4.5,4.4,4.3
+RUNNER_R_VERSION=4.6,4.5,4.4
 ```
 
 Comma-separated, **the first entry is the default**, and **every entry is
@@ -37,7 +37,7 @@ the list, not just the first that matches, and refuses to start a workload the
 declaration lied about.
 
 That is the rule that keeps the declaration honest. An image that says it carries
-Python 3.12 and does not is a deploy that fails at the worst moment, in the
+Python 3.13 and does not is a deploy that fails at the worst moment, in the
 container, where nobody is watching.
 
 Two more properties of the list:
