@@ -1,3 +1,5 @@
+> **Moved.** This guide is now part of [toft-docs](https://github.com/larchway-labs/toft-docs), one site with the user, admin and CLI & SDK guides, published per Toft version at https://larchway-labs.github.io/toft-docs/. This repository is archived; its tags keep working for installs that already took them.
+
 # Toft admin guide
 
 The manual for people who run a Toft install. It deploys onto a
