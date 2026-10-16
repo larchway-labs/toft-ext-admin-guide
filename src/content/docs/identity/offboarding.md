@@ -30,7 +30,7 @@ deactivates them. It cannot transfer apps — that is a judgement.
 
 ## Dormancy
 
-Launchpad can sweep accounts that have not been used in a long time and lock
+Toft can sweep accounts that have not been used in a long time and lock
 them: `dormant_lock_enabled` and `dormant_lock_days`. It is the backstop for the
 offboarding nobody did.
 

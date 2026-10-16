@@ -40,7 +40,7 @@ to give it and nothing else. The workload's environment has exactly three
 sources: the app's declared variables, the platform's contract variables, and
 credentials an administrator attached.
 
-So a database password in Launchpad's own environment is not in every app's. Nor
+So a database password in Toft's own environment is not in every app's. Nor
 is the collector credential, nor any encryption key.
 
 ## On disk
@@ -54,7 +54,7 @@ the workload only through the launcher.
 
 ## Cookies
 
-Every cookie the platform sets is named `launchpad_*`. Any other cookie name on
+Every cookie the platform sets is named `toft_*`. Any other cookie name on
 an app's origin is the app's own. That is how the two are told apart with no
 ambiguity, and an app may set whatever it likes.
 
@@ -64,7 +64,7 @@ ambiguity, and an app may set whatever it likes.
 instance and task IAM credentials.
 
 Set it. And do **not** instead set the IMDS hop limit to 1 — that blocks
-Launchpad's own pod as well.
+Toft's own pod as well.
 
 ## The thing this does not cover
 

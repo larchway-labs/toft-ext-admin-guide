@@ -66,7 +66,7 @@ levels — `(resource, app, folder)` is what makes a mapping unique, not
 `(resource, app)`.
 
 The app then has two mounts sharing one name, which is why the SDKs let an app
-say *which* — `lp.storage(name, folder=…)` and its peers in the other
+say *which* — `toft.storage(name, folder=…)` and its peers in the other
 languages. An app asking for a name that matches two mounts without saying which
 folder is refused, naming both.
 
@@ -82,13 +82,13 @@ take effect in a running process. Every other permission change does not.
 ## Shared mode
 
 **What shared mode refuses is storage with nowhere to put it.** The operator
-mounts the filesystem; **Launchpad mounts nothing itself**.
+mounts the filesystem; **Toft mounts nothing itself**.
 
 ```
-SHARED_STORAGE_ROOTS=reports=/srv/launchpad/reports,archive=/srv/launchpad/archive:ro
+SHARED_STORAGE_ROOTS=reports=/srv/toft/reports,archive=/srv/toft/archive:ro
 ```
 
-A level is **which mount** an app gets, not a permission Launchpad applies — so a
+A level is **which mount** an app gets, not a permission Toft applies — so a
 resource under a `:ro` root can only be mapped read-only. **The URL is never more
 generous than the mount.**
 
@@ -104,7 +104,7 @@ everywhere.
 ## Two things that surprise people
 
 **A browser upload needs CORS on the bucket.** Without it the upload fails in the
-browser, and Launchpad never sees it — so **it is never reported as a failed
+browser, and Toft never sees it — so **it is never reported as a failed
 upload**. Configure CORS when you configure the bucket, and the refusal copy names
 CORS when it can.
 

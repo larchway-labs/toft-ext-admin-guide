@@ -44,7 +44,7 @@ than a message that quietly went somewhere else.
 ## The far side's membership is the boundary
 
 What an integration can reach is decided by the far side — the channel it was
-invited to, the folder it was given. Launchpad does not re-implement that.
+invited to, the folder it was given. Toft does not re-implement that.
 
 **Teams is the exception, and its copy has to say so.** Do not paper over it when
 somebody asks.
@@ -86,5 +86,5 @@ before telling a developer their integration works: a connection that
 authenticates is not the same as an app that can post to the channel.
 
 A file-kind connection — SharePoint, OneDrive, Google Drive — is tested by
-uploading a one-line `launchpad-test.txt` to its default destination, because
+uploading a one-line `toft-test.txt` to its default destination, because
 those refuse a plain text message; the button says so. Expect to find the file.

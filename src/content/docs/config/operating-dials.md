@@ -20,7 +20,7 @@ environment variable *and* a setting, and they are not two knobs for one thing:
 | CPU ceiling per app | `APP_CPU_LIMIT_MILLICORES` / `_CORES` | `app_cpu_limit_millicores` / `_cores` | each start |
 | Builds at once | `MAX_CONCURRENT_BUILDS` | `max_concurrent_builds` | each dequeue |
 | Auto-deploy interval | `AUTO_DEPLOY_POLL_INTERVAL` | `auto_deploy_poll_seconds` | each tick |
-| R package repository | `LAUNCHPAD_R_REPOS` | `r_package_repository` | each build |
+| R package repository | `TOFT_R_REPOS` | `r_package_repository` | each build |
 | Platform log level | `LOG_LEVEL` | `log_level` | immediately |
 
 **A dial reaches a workload the next time that workload starts.** Lowering the

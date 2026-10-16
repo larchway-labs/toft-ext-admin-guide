@@ -3,7 +3,7 @@ title: Tags
 description: The taxonomy the estate is filed under, and who may add to it.
 ---
 
-Tags are how a Launchpad estate gets browsed. **You define the tags and their
+Tags are how a Toft estate gets browsed. **You define the tags and their
 allowed values**; app owners choose among them.
 
 Admin → Tags.
@@ -36,7 +36,7 @@ A tag that answers no such question is a tag nobody fills in.
 
 ## Framework is maintained for you
 
-Launchpad keeps a `framework` tag itself, from what detection decided. Nobody can
+Toft keeps a `framework` tag itself, from what detection decided. Nobody can
 edit it, which makes it the honest answer to "what is this written in" rather
 than what somebody typed a year ago.
 

@@ -58,7 +58,7 @@ changed* rather than applied over theirs. Reload, and save again.
 | `scheduled_run_retention_days` | Keep run history for | Scheduled task runs, by age. |
 | `scheduled_log_retention_days` | Keep task logs for | Lines an app logs while a task runs. |
 | `app_event_retention_days` | Keep failure events for | Failures nobody caused: failed builds, failed health checks, runs that couldn’t start. |
-| `platform_log_retention_days` | Keep the platform’s own log for | What Launchpad logged about each app: fetches, starts, repairs and refusals. |
+| `platform_log_retention_days` | Keep the platform’s own log for | What Toft logged about each app: fetches, starts, repairs and refusals. |
 | `announcement_recipient_retention_days` | Keep announcement recipients for | Who each announcement was mailed to, and what happened to each send. |
 | `max_versions_per_app` | Most versions an app may keep | The most releases one app keeps. 0 means no limit. |
 | `environment_tag` | Environment name | This install’s environment, such as stage or prod. Leave blank to turn this off. |

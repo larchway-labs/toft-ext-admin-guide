@@ -5,7 +5,7 @@ description: Metrics and traces out, and the rules that keep them from becoming 
 
 ## Exported, never resident
 
-Launchpad keeps no metrics database. It exports to a collector you run and holds
+Toft keeps no metrics database. It exports to a collector you run and holds
 nothing itself.
 
 **Never load-bearing.** Telemetry failing does not degrade the install and changes
@@ -50,7 +50,7 @@ inherited by a child process. An app cannot read your collector credential.
 Metric and span names are stable, and the inventory is asserted. Dashboards built
 against them keep working.
 
-**Cardinality is budgeted, and the budget is code.** `LAUNCHPAD_METRIC_APP_CARDINALITY_CAP`
+**Cardinality is budgeted, and the budget is code.** `TOFT_METRIC_APP_CARDINALITY_CAP`
 bounds the per-app dimension. Where a label would be unbounded, it is not there —
 which is what stops a label carrying an app id, a user id or a URL from turning
 your metrics bill into an incident.

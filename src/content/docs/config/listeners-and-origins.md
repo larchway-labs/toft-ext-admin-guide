@@ -63,7 +63,7 @@ Cookies carry the `Secure` flag by default. `DEV_INSECURE_COOKIES` turns that
 off and is **only** for a plain-HTTP loopback install — the checks page names it
 out loud on anything else.
 
-Every cookie the platform sets is named `launchpad_*`. Any other cookie name on
+Every cookie the platform sets is named `toft_*`. Any other cookie name on
 an app's origin is the app's own, which is how the two are told apart with no
 ambiguity.
 

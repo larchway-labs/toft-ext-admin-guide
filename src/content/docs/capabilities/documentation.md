@@ -3,7 +3,7 @@ title: Documentation
 description: Installing the guides, and what being first-party does and does not buy.
 ---
 
-Launchpad's own manuals — the user guide, this admin guide, and the CLI and SDK
+Toft's own manuals — the user guide, this admin guide, and the CLI and SDK
 guide — are **ordinary apps**, installed from the [gallery](../gallery/) like any
 other extension.
 
@@ -13,7 +13,7 @@ Turn the gallery on, find them, deploy them. They are extensions, so they are
 administrator-only.
 
 They install onto reserved slugs — `_user-guide`, `_admin-guide`, `_cli-guide`.
-The `_` namespace belongs to apps Launchpad installs itself: no ordinary app can
+The `_` namespace belongs to apps Toft installs itself: no ordinary app can
 take one of those names, which is why the address is stable and why somebody
 looking at `/apps/_admin-guide` can tell it came from the vendor rather than from
 a colleague.
@@ -62,7 +62,7 @@ into the gallery for you, and a sentence naming who to ask for everybody else.
 Not the dashboard, because that page is faults only and an uninstalled guide is
 not a fault.
 
-**Launchpad also cannot install them for you.** That would make a catalog entry
+**Toft also cannot install them for you.** That would make a catalog entry
 cause a clone with no administrator's action, and fire an outbound request on an
 install that switched the gallery off.
 

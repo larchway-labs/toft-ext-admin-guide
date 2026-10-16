@@ -66,7 +66,7 @@ Not harmless the moment a consumer refuses.
 the provisioning policy would have created anyway. It decides who may sign in,
 never what they may then do.
 
-Mapping IdP groups onto Launchpad roles is deliberately not part of this — that
+Mapping IdP groups onto Toft roles is deliberately not part of this — that
 collides with the rule that [activation](../activation/) is one audited act that
 never mints an administrator.
 
@@ -114,7 +114,7 @@ decays into a wall nobody reads.
 
 ## What is certain, and what is only likely
 
-Launchpad refuses the configuration it is sure could never work — a list on a
+Toft refuses the configuration it is sure could never work — a list on a
 GitHub provider — and warns about the rest. It does **not** refuse a gated OIDC
 provider whose scopes look as though they cannot deliver the claim: on Entra,
 groups come from the app registration rather than a requested scope, and a false

@@ -3,16 +3,16 @@ title: The platform's own subcommands
 description: Five things the binary does without starting a server.
 ---
 
-The Launchpad binary is a server when you run it with no arguments. It also
+The Toft binary is a server when you run it with no arguments. It also
 carries five subcommands, and three of them talk to Postgres and exit — which is
 what makes them usable on an install that will not start.
 
 ```bash
-launchpad local-admin
-launchpad advisory-import <file>
-launchpad rotate-key
-launchpad routes
-launchpad openapi
+toft local-admin
+toft advisory-import <file>
+toft rotate-key
+toft routes
+toft openapi
 ```
 
 ## `local-admin`
@@ -57,7 +57,7 @@ The document's paths are exactly the routes this install serves — not a
 hand-maintained file that drifts.
 
 **Every route reachable by a personal API key is marked in it**, with
-`x-launchpad-key-denied` on exactly the operations that refuse a key. That is the
+`x-toft-key-denied` on exactly the operations that refuse a key. That is the
 artifact to hand somebody asking what a key can do.
 
 ## Two more things the binary does

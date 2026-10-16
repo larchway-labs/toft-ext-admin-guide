@@ -3,7 +3,7 @@ title: Configuration and settings
 description: Which knob is which, and the three-question test that sorts them.
 ---
 
-Launchpad splits its knobs in two, and the split is not arbitrary.
+Toft splits its knobs in two, and the split is not arbitrary.
 
 ## Configuration is the operator's
 

@@ -1,14 +1,14 @@
 ---
 title: Retention
-description: What Launchpad keeps, for how long, and what it never prunes.
+description: What Toft keeps, for how long, and what it never prunes.
 ---
 
-Everything Launchpad accumulates has a retention setting, on Admin → Settings.
+Everything Toft accumulates has a retention setting, on Admin → Settings.
 All of them are in days.
 
 | Setting | What it prunes |
 |---|---|
-| `platform_log_retention_days` | What Launchpad said about each app — the release it fetched, the interpreter it resolved, the reason a start was refused. |
+| `platform_log_retention_days` | What Toft said about each app — the release it fetched, the interpreter it resolved, the reason a start was refused. |
 | `app_event_retention_days` | Failure events: a build that failed, a health check that stopped answering, a run that could not be made. |
 | `job_run_retention_days` | Job run rows, and the output files attached to them. |
 | `job_log_retention_days` | A background job's log lines. |

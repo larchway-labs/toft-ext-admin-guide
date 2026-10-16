@@ -3,7 +3,7 @@ title: What is optional
 description: The rule that governs every optional capability, and the one exception.
 ---
 
-Launchpad has a rule about capabilities you have not configured, and it holds
+Toft has a rule about capabilities you have not configured, and it holds
 everywhere:
 
 ## Absent, not dormant

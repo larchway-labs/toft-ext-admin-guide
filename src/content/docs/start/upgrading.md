@@ -14,7 +14,7 @@ is the same class of problem as a git tag that gets re-pointed.
 
 ## Migrations run at startup
 
-Launchpad owns its schema. There is no separate migration step and nothing to
+Toft owns its schema. There is no separate migration step and nothing to
 run by hand.
 
 **Nothing runs a migration backwards.** There is no down-path, and a rollback of
@@ -23,7 +23,7 @@ upgrade that crosses one.
 
 ## The schema floor
 
-At a major version, Launchpad collapses its migration history into a new
+At a major version, Toft collapses its migration history into a new
 **baseline**. A database below that baseline's version cannot be migrated by
 this binary, and the process **refuses at startup, by name**:
 
@@ -64,5 +64,5 @@ Neither takes an install down. Both are worth looking at the same day.
 ## The other artifacts
 
 The Helm chart and the Compose bundle are versioned with the binary and are
-published alongside it. The `lp` client is published separately and is
+published alongside it. The `toft` client is published separately and is
 backward-compatible across a release; people do not need to upgrade it in step.

@@ -26,7 +26,7 @@ misspelling is refused at startup naming the three that exist.
 ```
 # S3 or S3-compatible
 ARTIFACT_STORE=s3
-ARTIFACT_BUCKET=launchpad-releases
+ARTIFACT_BUCKET=toft-releases
 ARTIFACT_REGION=eu-west-1
 ARTIFACT_ENDPOINT=          # only for MinIO or a self-hosted server
 ARTIFACT_S3_PATH_STYLE=1    # required by MinIO and most compatible servers
@@ -34,12 +34,12 @@ ARTIFACT_PREFIX=releases/   # when the bucket is shared
 
 # Azure Blob — ARTIFACT_BUCKET is the container
 ARTIFACT_STORE=azblob
-ARTIFACT_BUCKET=launchpad-releases
-ARTIFACT_ACCOUNT=launchpadartifacts
+ARTIFACT_BUCKET=toft-releases
+ARTIFACT_ACCOUNT=toftartifacts
 
 # A local directory, for a box whose disk you trust
 ARTIFACT_STORE=local
-ARTIFACT_DIR=/var/lib/launchpad/artifacts
+ARTIFACT_DIR=/var/lib/toft/artifacts
 ```
 
 `ARTIFACT_STORE=azblob` without `ARTIFACT_ACCOUNT` is refused at startup.
@@ -64,7 +64,7 @@ storage:
 
 | | Holds | Configured by |
 |---|---|---|
-| **Artifact store** | Launchpad's built releases | `ARTIFACT_*` |
+| **Artifact store** | Toft's built releases | `ARTIFACT_*` |
 | **App storage** | Your apps' own files | `STORE_*`, and a [storage resource](../../capabilities/storage/) |
 
 Deriving one from the other would mean an install that gave apps object storage

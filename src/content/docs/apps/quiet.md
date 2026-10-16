@@ -3,7 +3,7 @@ title: Quiet apps
 description: Finding what nobody uses, without the platform deciding for you.
 ---
 
-Launchpad tracks how long it has been since anybody showed evidence of wanting
+Toft tracks how long it has been since anybody showed evidence of wanting
 an app. Admin → Usage carries the list.
 
 ## Quiet is measured from evidence, not from traffic alone
@@ -20,7 +20,7 @@ Two things deliberately do not count:
 
 ## Quiet is never a verdict
 
-Launchpad reports the fact; it does not act on it.
+Toft reports the fact; it does not act on it.
 
 - **There is no sweep.** Nothing is stopped, locked or deleted for being quiet.
 - The **fact is the owner's** — they see it on their app.

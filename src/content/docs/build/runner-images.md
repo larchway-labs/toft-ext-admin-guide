@@ -7,11 +7,11 @@ In isolated mode, a workload runs in a container built from a **runner image** â
 one per language family, never per framework and never per app.
 
 ```
-RUNNER_IMAGE_PYTHON=ghcr.io/example/launchpad-runner-python:1
-RUNNER_IMAGE_NODE=ghcr.io/example/launchpad-runner-node:1
-RUNNER_IMAGE_GO=ghcr.io/example/launchpad-runner-go:1
-RUNNER_IMAGE_R=ghcr.io/example/launchpad-runner-r:1
-RUNNER_IMAGE_STATIC=ghcr.io/example/launchpad-runner-static:1
+RUNNER_IMAGE_PYTHON=ghcr.io/example/toft-runner-python:1
+RUNNER_IMAGE_NODE=ghcr.io/example/toft-runner-node:1
+RUNNER_IMAGE_GO=ghcr.io/example/toft-runner-go:1
+RUNNER_IMAGE_R=ghcr.io/example/toft-runner-r:1
+RUNNER_IMAGE_STATIC=ghcr.io/example/toft-runner-static:1
 ```
 
 ## A missing image is refused by name

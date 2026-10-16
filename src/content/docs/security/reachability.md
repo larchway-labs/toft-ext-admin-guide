@@ -3,7 +3,7 @@ title: Reachability
 description: Checking that a public app is actually reachable, and what happens when it is not.
 ---
 
-If your install is public, Launchpad asks an outside service whether your public
+If your install is public, Toft asks an outside service whether your public
 apps actually answer from out there — before treating them as published.
 
 Configured by `PRESENCE_ENDPOINT`. Absent means absent.

@@ -11,7 +11,7 @@ to report themselves nowhere report themselves there.
 Sign in as the [built-in administrator](../../identity/local-administrator/) —
 that is what it is for — and look at the provider.
 
-If you cannot, you need the machine: `launchpad local-admin`.
+If you cannot, you need the machine: `toft local-admin`.
 
 ## Somebody signed in and has no access
 
@@ -85,7 +85,7 @@ ceiling before telling the owner that.
 
 ## Storage uploads fail from the browser and nothing is logged
 
-CORS on the bucket. Launchpad never saw the request, so it cannot report it. See
+CORS on the bucket. Toft never saw the request, so it cannot report it. See
 [App storage](../../capabilities/storage/).
 
 ## The gallery is empty

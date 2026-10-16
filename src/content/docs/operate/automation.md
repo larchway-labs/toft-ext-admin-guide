@@ -27,7 +27,7 @@ scheduled; both can be run on demand.
 - **Where isolated execution is available, a run is a pod** in the cluster, as it
   always was. Every install that ran jobs before keeps doing so.
 - **Where it is not — no cluster — a run is a process on the platform's own
-  machine**, started by `launchpad runner` (the platform binary itself, so a host
+  machine**, started by `toft runner` (the platform binary itself, so a host
   run and a pod speak one contract) as a process group of its own **under the app's
   OS account**. It gets a directory of its own for its identity and scratch, removed
   when the run ends. It is **not** PM2, whose memory limit is a restart, and for a
@@ -57,7 +57,7 @@ says why.
 
 A **batch app** is an app whose only entrypoints are jobs — a nightly extract that
 does not need a web server it would never answer. It is **declared, never
-inferred**, by a `[batch]` table in `launchpad.toml`, because a Go `main`, a Python
+inferred**, by a `[batch]` table in `toft.toml`, because a Go `main`, a Python
 `main.py` and a Node `start` script look exactly like web apps to every detector.
 Node, Python, Go and R only; `[batch]` beside `[static]` is refused.
 
@@ -67,7 +67,7 @@ What differs for you:
   skips the start and ready steps. The flip to the new release is the whole of going
   live.
 - **Its status is `ready`**, not `running`: nothing answers, so nothing is running.
-  If you alert on app status — in the telemetry `launchpad.apps.by_status` metric,
+  If you alert on app status — in the telemetry `toft.apps.by_status` metric,
   say — an alert written as "not `running`" now counts batch apps. Write it against
   the statuses you mean.
 - **Restart and Stop answer 409 `no_service`**, and a scheduled task cannot be
@@ -83,7 +83,7 @@ a job](#sending-from-a-job).
 
 A schedule of either kind is **UTC unless it names a time zone** —
 `CRON_TZ=Europe/London 0 6 * * *`, or the Time zone field on the dialog, or a
-`timezone` key beside `schedule` in `launchpad.toml`. Lists print `expression ·
+`timezone` key beside `schedule` in `toft.toml`. Lists print `expression ·
 zone`. A prefix typed into `schedule` in a manifest is refused: one way to say it
 in a file.
 
@@ -98,10 +98,10 @@ database is compiled into the binary.
 
 Every job run can carry **`scheduled_for`** — the tick it belongs to, not the moment
 it was dispatched. A run that waited an hour behind its app's queue limit still
-knows it is the 03:00 run. The job receives it as `LAUNCHPAD_SCHEDULED_FOR`,
+knows it is the 03:00 run. The job receives it as `TOFT_SCHEDULED_FOR`,
 written in the schedule's own zone, and a retry carries its original's.
 
-**A manual run has none unless a person names one** — `lp job run --for`, or the
+**A manual run has none unless a person names one** — `toft job run --for`, or the
 *Run for* dialog — because defaulting to now would make a re-run of last Tuesday
 quietly process today. An app starting a job itself is acting now and cannot set it.
 
@@ -117,7 +117,7 @@ a recovery notice that names the job.
 | `job_schedule_skipped` | A scheduled firing was **refused by the queue** — the app already had as many runs in flight as it is allowed. | When the firing is refused. The schedule has already moved on, so without this the run would vanish with only a log line. |
 | `job_run_overdue` | A job has gone **`expect_within`** without a *success*. | By the jobs sweep. |
 
-**`expect_within`** is set in `launchpad.toml` or the job dialog — a duration such
+**`expect_within`** is set in `toft.toml` or the job dialog — a duration such
 as `26h` or `7d`, from one hour to 31 days. It is for work nobody watches: a job
 that fails already sends a notice, but one that stops *running* — paused and
 forgotten, refused by its queue limit, never placed — sends nothing.
@@ -180,9 +180,9 @@ is refused by name rather than quietly run against a different one.
 
 ## Provenance is shown
 
-Where a schedule came from — `launchpad.toml` or the UI — is on the listing.
+Where a schedule came from — `toft.toml` or the UI — is on the listing.
 
-**`launchpad.toml` is optional and still the better door**: it travels with the
+**`toft.toml` is optional and still the better door**: it travels with the
 code and is reviewed with it. An app with no manifest still has the UI.
 
 ## The caps

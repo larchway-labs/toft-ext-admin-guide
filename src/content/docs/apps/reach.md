@@ -30,7 +30,7 @@ is assembly.
 
 **That list is a closed specification, not a summary.** A table carrying an
 `app_id` that is neither read here nor written down as deliberately excluded
-fails Launchpad's own build. The exclusion half is the load-bearing one: without
+fails Toft's own build. The exclusion half is the load-bearing one: without
 it, a future feature could give apps a new way to touch something, this page
 would keep rendering, and the only symptom would be an answer that had been
 quietly incomplete for a year.

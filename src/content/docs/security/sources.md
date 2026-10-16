@@ -46,7 +46,7 @@ out where they are rather than in a log.
 
 ## Connected git hosts
 
-A connected git host is a **held credential**: Launchpad holds it, developers
+A connected git host is a **held credential**: Toft holds it, developers
 never see it, and **a developer is never told which auth method was used**.
 
 See [Connected git hosts](../git-connections/).

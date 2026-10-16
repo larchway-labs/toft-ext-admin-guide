@@ -44,7 +44,7 @@ Do not switch it off with one administrator. The second one is the whole point.
 ## Getting back in
 
 ```bash
-launchpad local-admin
+toft local-admin
 ```
 
 A subcommand of the binary that **talks to Postgres and exits** — it does not

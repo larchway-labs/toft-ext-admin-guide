@@ -27,7 +27,7 @@ rather than served.
 ## Rollback
 
 An owner picks a release and makes it current; the workload restarts onto it and
-nothing is rebuilt. `lp rollback` does the same and names the release before
+nothing is rebuilt. `toft rollback` does the same and names the release before
 acting.
 
 **A restart is not a deploy.** The verdicts that apply — the dependency policy,

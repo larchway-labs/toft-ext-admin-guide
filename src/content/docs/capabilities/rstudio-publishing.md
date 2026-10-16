@@ -3,17 +3,17 @@ title: Publishing from RStudio
 description: The Posit Connect publishing API — what RStudio and rsconnect can do here, what it depends on, and what it costs to leave on.
 ---
 
-Launchpad answers the part of Posit Connect's API that the `rsconnect` R package
+Toft answers the part of Posit Connect's API that the `rsconnect` R package
 uses to publish. People who publish from RStudio or Posit Workbench keep using
-the **Publish** button and `rsconnect::deployApp()`, and add your Launchpad as a
-server the way they would add a Connect server. They do not need `lp`.
+the **Publish** button and `rsconnect::deployApp()`, and add your Toft as a
+server the way they would add a Connect server. They do not need `toft`.
 
 The developer's side is in the user guide, under **Deploying → From RStudio**.
 This page is what you decide and what you can see.
 
 ## What it is, and what it is not
 
-**A translation onto things Launchpad already does.** Nothing in it is a second
+**A translation onto things Toft already does.** Nothing in it is a second
 way of running an app:
 
 | Connect's term | What it is here |
@@ -24,13 +24,13 @@ way of running an app:
 | A task | The deployment, and its build log streamed back to RStudio. |
 | Environment variables | The app's variables, stored **sensitive**. |
 
-**What Connect has and Launchpad does not is not imitated.** Content settings,
+**What Connect has and Toft does not is not imitated.** Content settings,
 access lists, vanity URLs and schedules set from `rsconnect` are refused; people
-manage those on the app in Launchpad. An app published from RStudio is an
+manage those on the app in Toft. An app published from RStudio is an
 ordinary app from the moment it exists.
 
 The API lives at **`/__api__`** on the platform's own address, because that is
-the path `rsconnect` sends. If a reverse proxy sits in front of Launchpad and
+the path `rsconnect` sends. If a reverse proxy sits in front of Toft and
 forwards only selected paths, it must forward `/__api__` and `/cli`.
 
 ## What it depends on
@@ -53,7 +53,7 @@ have already made:
   applies unchanged, because it is the same deploy.
 
 **Deploy keys cannot use it.** An app created from RStudio needs a person to own
-it, and a pipeline has `lp`.
+it, and a pipeline has `toft`.
 
 ## How RStudio signs in
 
@@ -61,8 +61,8 @@ Two ways, and both end in an ordinary personal key.
 
 **RStudio's own Add account dialog.** `rsconnect` generates a key pair on the
 publisher's machine and registers the public half. RStudio opens a page in their
-browser — the same approval page `lp login` uses, titled **Sign in RStudio** —
-showing the address the request came from. When they approve, Launchpad creates
+browser — the same approval page `toft login` uses, titled **Sign in RStudio** —
+showing the address the request came from. When they approve, Toft creates
 a personal key named **RStudio (rsconnect)** and binds it to that key pair.
 From then on every request RStudio makes is **signed**; no secret travels with
 it. The private key stays on the publisher's machine.
@@ -77,18 +77,18 @@ It expires on the personal-key default of 90 days, after which the person adds
 the account again.
 
 The approval page is the defence against somebody being sent a sign-in they did
-not start. It names the requesting address, so if Launchpad sits behind a proxy,
+not start. It names the requesting address, so if Toft sits behind a proxy,
 `TRUSTED_PROXY_CIDRS` has to name it — otherwise every request appears to come
 from the proxy. See [Listeners, origins and proxies](../../config/listeners-and-origins/).
 
 ### What the signature protocol fixes
 
-`rsconnect` decides how requests are signed, and Launchpad cannot change it:
+`rsconnect` decides how requests are signed, and Toft cannot change it:
 
 - **RSA with SHA-1.** An install running in a FIPS-only mode refuses SHA-1
   signatures, and RStudio's sign-in will not work there. A pasted key still does.
 - **A five-minute clock window.** A signed request carries its time, and one
-  more than five minutes from Launchpad's clock is refused. A publisher whose
+  more than five minutes from Toft's clock is refused. A publisher whose
   machine has a wrong clock is told so. Within the window, a captured request
   could be replayed — the same exposure Connect has. TLS is what stops it being
   captured.
@@ -109,5 +109,5 @@ for this surface alone, which is deliberate: it is two capabilities you already
 govern, reached by a different client.
 
 `/__api__/server_settings` still answers when keys are off. It reports that
-neither way in is available, and Launchpad's version — the same version the
+neither way in is available, and Toft's version — the same version the
 login page already tells anyone who can reach it.

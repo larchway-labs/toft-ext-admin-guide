@@ -22,11 +22,11 @@ every write. The Scope column on Admin → API keys is how you answer "which of
 these could delete an app".
 
 Read is narrower, and it is **not** safe to leak: a read-scoped key cannot
-change anything in Launchpad, but it can still read anything its owner can read
+change anything in Toft, but it can still read anything its owner can read
 — source archives, logs, stored objects, the user directory, and for an
 administrator's key the audit log — and it can still call that person's apps. A
-scope bounds Launchpad's own routes; it says nothing about what a deployed app
-does with a request, because Launchpad has no view into an app's routes.
+scope bounds Toft's own routes; it says nothing about what a deployed app
+does with a request, because Toft has no view into an app's routes.
 
 You cannot widen or narrow somebody's key, and there is no install-wide setting
 forcing narrow ones. The tool you have is the one you already had: disable it,

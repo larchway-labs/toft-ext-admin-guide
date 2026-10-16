@@ -3,7 +3,7 @@ title: Scan targets and security.txt
 description: Handing a security team a list of what to point a scanner at.
 ---
 
-Launchpad publishes **what to scan** and **how to be contacted**. It does not
+Toft publishes **what to scan** and **how to be contacted**. It does not
 scan.
 
 ## The reader
@@ -38,7 +38,7 @@ one app.
 
 ## A scan is never usage
 
-`X-Launchpad-Scan: 1` from an `lp_` key marks a request as a scan. It **grants
+`X-Toft-Scan: 1` from an `lp_` key marks a request as a scan. It **grants
 nothing** — it only stops the request counting as evidence that somebody wanted
 the app, so a sweep does not make every [quiet](../../apps/quiet/) app look busy.
 
@@ -59,7 +59,7 @@ Four settings on Admin → Settings, and filling in the contact is what publishe
 **Absent rather than empty.** An empty `security.txt` is worse than none: it looks
 like an answer.
 
-**The expiry is required, never invented and never rewritten.** Launchpad will not
+**The expiry is required, never invented and never rewritten.** Toft will not
 silently extend it — an expired `security.txt` is a fact you should see, and the
 checks page warns 30 days out and again once it has passed.
 

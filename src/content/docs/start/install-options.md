@@ -7,7 +7,7 @@ Two supported shapes, and the same image behind both.
 
 ## One box, with Docker Compose
 
-The whole install on one Linux machine: Launchpad, Postgres, and the apps it
+The whole install on one Linux machine: Toft, Postgres, and the apps it
 runs. Apps run in **shared mode** — as processes on that machine, bound to
 loopback.
 
@@ -48,7 +48,7 @@ An install can offer both. See [Execution modes](../../apps/execution-modes/).
 
 ## The image
 
-Both pull the same published image, `gopanair/launchpad`, multi-arch, **tagged
+Both pull the same published image, `gopanair/toft`, multi-arch, **tagged
 with a version and never `latest`**.
 
 Pinning is the point: an install that follows `latest` upgrades itself at a
@@ -60,7 +60,7 @@ restart you did not plan.
 |---|---|
 | **Postgres 17** | The schema is migrated by the binary at startup. |
 | **A hostname** | For outbound links. The install works out its own inbound address. |
-| **TLS** | Terminated in front of Launchpad, by your own proxy or ingress. |
+| **TLS** | Terminated in front of Toft, by your own proxy or ingress. |
 | **An apps address** | Apps are served on a **different origin**. A second port is enough; a second hostname is better. |
 
 ## What the chart must not template
@@ -68,11 +68,11 @@ restart you did not plan.
 Five things in the Helm chart are compiled into the binary and must never be
 made configurable:
 
-- The `app.kubernetes.io/name: launchpad` pod label — every isolated workload's
+- The `app.kubernetes.io/name: toft` pod label — every isolated workload's
   NetworkPolicy admits ingress from it.
 - The workload UID `10001`.
 - The unauthenticated `/api/v1/config` probe.
-- The `launchpad-workload` ServiceAccount, and the `launchpad-bootstrap` token
+- The `toft-workload` ServiceAccount, and the `toft-bootstrap` token
   audience that names it.
 
 If you are adapting the chart, leave those alone. Changing one produces an

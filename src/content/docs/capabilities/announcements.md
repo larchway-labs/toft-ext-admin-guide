@@ -13,7 +13,7 @@ it; both are audited and both show up under the `settings` filter on Activity.
 Good for: a maintenance window, a deprecation date, a "we know, we are on it".
 
 Bad for: anything that has to be *read*. A banner is seen by whoever happens to
-open Launchpad.
+open Toft.
 
 ## The announcement email
 
@@ -91,7 +91,7 @@ and a person filing a ticket:
 | **Account activated** | Emailed when you activate them. |
 
 Each should name **who to contact**. "Access denied" is a message that generates
-work for you; "Ask #it-help to request a Launchpad account" is one that does not.
+work for you; "Ask #it-help to request a Toft account" is one that does not.
 
 There is a fifth, for apps: **the locked app message**, the install's default copy
 for what a visitor sees at a [locked](../../apps/locking/) app's URL.

@@ -3,7 +3,7 @@ title: Dependency policy
 description: What the scanner reads, what it can decide, and what it must never do.
 ---
 
-Launchpad reads the names and versions your apps declare and checks them against
+Toft reads the names and versions your apps declare and checks them against
 a vulnerability feed. Admin → Dependencies.
 
 ## Do not oversell it
@@ -30,7 +30,7 @@ shown and enforced. Its absence of findings is not a verdict.
 The inventory is written **before** any of the questions is asked, so an app's
 packages are known even where the answers are not.
 
-## A lockfile Launchpad does not read is named
+## A lockfile Toft does not read is named
 
 Every Node path here — the scan, the shared-mode install and the runner's — reads
 `package-lock.json`. An app that locks with **`pnpm-lock.yaml`** or **`yarn.lock`**
@@ -149,7 +149,7 @@ for a mirror that needs one. Point it at an internal mirror if egress is closed.
 **For an air-gapped install:**
 
 ```bash
-launchpad advisory-import /path/to/corpus
+toft advisory-import /path/to/corpus
 ```
 
 A subcommand that talks to Postgres and exits.

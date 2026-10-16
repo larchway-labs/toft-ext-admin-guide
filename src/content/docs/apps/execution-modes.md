@@ -9,7 +9,7 @@ implementation detail and the mode is the contract.
 
 ## Shared
 
-Apps run as processes on the Launchpad machine, managed by PM2, **bound to
+Apps run as processes on the Toft machine, managed by PM2, **bound to
 `127.0.0.1`** and reached only through the platform's proxy.
 
 - Cheap. No cluster, no images, no registry.
@@ -42,11 +42,11 @@ rather than `running`, and its jobs are placed as above.
 
 ## Per-app OS accounts, in shared mode
 
-**This is the production posture.** Without it, every app runs as the Launchpad
+**This is the production posture.** Without it, every app runs as the Toft
 user and can read the platform database and every other app's secrets.
 
 `APP_USER_PER_APP` with `APP_USER_AUTOCREATE` gives each app a nologin system
-account. It requires Launchpad to run as root, because PM2 setuids to the app
+account. It requires Toft to run as root, because PM2 setuids to the app
 account.
 
 Two structural points:

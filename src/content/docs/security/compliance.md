@@ -21,7 +21,7 @@ evidence that one was passed, and nothing here is an attestation.
 |---|---|---|
 | A property of | the **build** | the **install** |
 | Reads | nothing | your settings, providers, credentials, sources, apps |
-| Says | what Launchpad does about each requirement | what this machine is actually set to, now |
+| Says | what Toft does about each requirement | what this machine is actually set to, now |
 | Goes stale when | you upgrade | you change anything |
 | Renders on a bare install | yes | yes, mostly `absent` |
 
@@ -30,7 +30,7 @@ registry. A single document doing both jobs would be one nobody could date.
 
 The control document is the same sentence on every install of a version, so it
 can be circulated once across an estate. **Download it as a PDF** —
-`launchpad-800-171r3-controls-<version>.pdf` — laid out in the binary itself,
+`toft-800-171r3-controls-<version>.pdf` — laid out in the binary itself,
 with no browser involved, so it works on a box with no outbound HTTPS. The build
 is in the footer of every page, because pages get quoted and attached to
 findings on their own.
@@ -41,13 +41,13 @@ Every requirement is one of four:
 
 | | |
 |---|---|
-| **platform** | Launchpad does this |
-| **shared** | Launchpad does part; you do the rest |
+| **platform** | Toft does this |
+| **shared** | Toft does part; you do the rest |
 | **inherited** | Your infrastructure does it, not this software |
-| **customer** | Yours entirely — Launchpad has no part in it |
+| **customer** | Yours entirely — Toft has no part in it |
 
 **The entries claiming nothing are what make the rest credible.** A pack
-asserting Launchpad satisfied all 97 requirements would be worthless to an
+asserting Toft satisfied all 97 requirements would be worthless to an
 assessor: this is software, and it has no part in personnel screening, physical
 protection or awareness training. At least twenty requirements must stay
 *customer* or *inherited*, and a test holds that floor — a registry drifting
@@ -55,7 +55,7 @@ towards claiming everything would drift one requirement at a time.
 
 ## No score, and there never will be one
 
-Nineteen of the requirements have nothing to do with Launchpad, so any average
+Nineteen of the requirements have nothing to do with Toft, so any average
 mixes a platform control with a personnel one and produces a figure whose only
 use is to be quoted by somebody who has not read the rest.
 
@@ -89,7 +89,7 @@ that fails is that row's outcome, never a missing row.
 
 **Absent is never amber.** It matters more here than anywhere else in the
 product, because the reader is an assessor who does not know which of
-Launchpad's capabilities are optional, and a row that looks like a finding will
+Toft's capabilities are optional, and a row that looks like a finding will
 be filed as one. `refused` and `error` stay apart for the same reason:
 collapsing them leaves a reader unable to tell a boundary from an outage.
 
@@ -104,7 +104,7 @@ from the file alone**, which deliberately covers its own collection timestamp. A
 digest that ignored part of its own document would be one nobody could verify by
 hashing the document.
 
-It downloads as `compliance-<install>-<date>.json`. Launchpad generates it,
+It downloads as `compliance-<install>-<date>.json`. Toft generates it,
 streams it and forgets it — you have somewhere to file an artifact and the
 platform does not need one.
 

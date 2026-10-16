@@ -45,7 +45,7 @@ on. Change who gets something in one place.
 Two switches:
 
 - **`email_notify_admin`** — mail to system administrators about this install.
-- **`email_notify_app`** — mail to the people who use Launchpad, about their own
+- **`email_notify_app`** — mail to the people who use Toft, about their own
   apps and access.
 
 **`email_admin_group_address`** sends administrator notifications to a distribution

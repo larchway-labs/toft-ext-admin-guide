@@ -3,7 +3,7 @@ title: At-rest encryption
 description: The key ring, the backends, and the difference between retiring a key and revoking it.
 ---
 
-Secrets Launchpad stores — app environment variables, provider client secrets,
+Secrets Toft stores — app environment variables, provider client secrets,
 integration credentials, held credentials — are encrypted at rest.
 
 ## Every ciphertext names the key that wrote it
@@ -30,7 +30,7 @@ not given a generic decryption failure.
 
 1. New key in `ENCRYPTION_KEY`, the previous one in `ENCRYPTION_KEY_OLD`.
 2. Restart. Everything still reads; new writes use the new key.
-3. `launchpad rotate-key` — a subcommand that talks to Postgres and exits — sweeps
+3. `toft rotate-key` — a subcommand that talks to Postgres and exits — sweeps
    the stored records onto the new key.
 4. When the sweep is done, drop the old key.
 
@@ -48,7 +48,7 @@ can read becomes unreadable. Do not reach for it as a tidier form of retirement.
 
 **Presence decides the backend, and there is no runtime fallback.**
 `ENCRYPTION_KEY_URI` puts the key that encrypts the key into a KMS. If that is
-configured and unavailable, Launchpad **refuses** rather than quietly falling back
+configured and unavailable, Toft **refuses** rather than quietly falling back
 to a local key.
 
 The local backend is a **peer, not a fallback**. It is a legitimate choice.
@@ -61,7 +61,7 @@ Two startup refusals worth knowing:
 
 ## No key reaches a workload
 
-Apps never receive a key. They receive decrypted values Launchpad chose to give
+Apps never receive a key. They receive decrypted values Toft chose to give
 them. An app cannot decrypt anything on its own, including its own variables'
 ciphertext.
 

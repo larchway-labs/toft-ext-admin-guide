@@ -38,7 +38,7 @@ names are somebody else's contract.
 
 | | |
 |---|---|
-| `DATABASE_URL` | Postgres. Launchpad owns and migrates the schema. |
+| `DATABASE_URL` | Postgres. Toft owns and migrates the schema. |
 | `TEST_DATABASE_URL` | Tests only. |
 
 ## Secrets
@@ -89,7 +89,7 @@ over a CPU limit it is merely throttled.
 
 ## App process isolation — the production posture
 
-Without these, **every app runs as the Launchpad user** and can read the platform
+Without these, **every app runs as the Toft user** and can read the platform
 database and every other app's secrets.
 
 | | |
@@ -136,7 +136,7 @@ callback address a workload can resolve.
 `KUBE_STORE_CSI_DRIVER` · `KUBE_STORE_REGION`
 
 **Shared mode** · `SHARED_STORAGE_ROOTS` — `name=/path[:ro]`, comma-separated. The
-operator mounts; Launchpad mounts nothing.
+operator mounts; Toft mounts nothing.
 
 **The signer's object store** · `STORE_BACKEND` (`s3` \| `azblob`) ·
 `STORE_ENDPOINT` · `STORE_REGION` · `STORE_S3_PATH_STYLE` · `STORE_ACCOUNT` ·
@@ -151,7 +151,7 @@ Read from this process's environment and **beating the app's**:
 `NPM_CONFIG_REGISTRY`, `UV_INDEX_URL`, `GOPROXY`, the registry credentials, the
 proxy and CA variables, `GOTOOLCHAIN`, and the rest of the `GO*` family.
 
-`LAUNCHPAD_R_REPOS` is a dial, and is the largest single lever on R build times.
+`TOFT_R_REPOS` is a dial, and is the largest single lever on R build times.
 
 `GOOS` and `GOARCH` are **refused** rather than passed.
 
@@ -166,7 +166,7 @@ half-configured pipeline is refused at startup.
 `OTEL_METRICS_EXPORTER` · `OTEL_METRIC_EXPORT_INTERVAL` ·
 `OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE` · `OTEL_TRACES_SAMPLER` ·
 `_SAMPLER_ARG` · `OTEL_RECORD_ENDUSER_ID` · `OTEL_DB_TRACE` ·
-`LAUNCHPAD_METRIC_APP_CARDINALITY_CAP` · `PROPAGATE_TRACE_TO_APPS`
+`TOFT_METRIC_APP_CARDINALITY_CAP` · `PROPAGATE_TRACE_TO_APPS`
 
 **The scrape endpoint** · `METRICS_ADDR` · `METRICS_TOKEN`. A listener of its own,
 never a path on `:8080`.

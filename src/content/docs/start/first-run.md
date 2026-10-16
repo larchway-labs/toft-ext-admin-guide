@@ -3,7 +3,7 @@ title: First run
 description: Getting in the first time, and the order to do things in.
 ---
 
-On first start Launchpad migrates its own schema and comes up with **no identity
+On first start Toft migrates its own schema and comes up with **no identity
 providers configured**. That is deliberate, and so is how you get in.
 
 ## There is always exactly one way in that needs no provider

@@ -5,13 +5,13 @@ description: Which interpreters this install offers, who decides, and how to ret
 
 ## Discovered, never compiled in
 
-Launchpad ships no list of language versions. **The operator says where, and the
+Toft ships no list of language versions. **The operator says where, and the
 probe says what.** You install interpreters on the machine (or bake them into the
-[runner images](../runner-images/)); Launchpad finds them and offers what it
+[runner images](../runner-images/)); Toft finds them and offers what it
 found.
 
 There is no version string in a variable name anywhere, which is why adding a new
-Python does not need a Launchpad release.
+Python does not need a Toft release.
 
 Admin → Info and the health endpoint both list what was found. The checks page
 re-probes a family reported **absent** when you press Run checks — so installing
@@ -89,7 +89,7 @@ carries.
 
 ## R has more moving parts than the others
 
-**Point R at a binary repository.** `LAUNCHPAD_R_REPOS`, and it is a
+**Point R at a binary repository.** `TOFT_R_REPOS`, and it is a
 [dial](../../config/operating-dials/). This is the single largest lever on R build
 times, and on some architectures it is the difference between a build and a
 failure.

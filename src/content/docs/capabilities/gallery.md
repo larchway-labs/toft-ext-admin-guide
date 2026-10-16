@@ -3,7 +3,7 @@ title: The gallery
 description: Extensions and examples, and the four rules that keep a catalog from becoming authority.
 ---
 
-A catalog of things the Launchpad team publishes: **extensions** (cloned from a
+A catalog of things the Toft team publishes: **extensions** (cloned from a
 repository at a pinned tag) and **examples** (fetched as an archive).
 
 **Off by default.** `gallery_deploy_mode` offers: nothing, extensions only, or
@@ -72,7 +72,7 @@ whose value could not be determined are different, and the UI says which.
 forgotten. A catalog that silently lists nine of ten items is a support call
 nobody can answer.
 
-**A catalog that is too new** tells you *"this catalog needs a newer Launchpad"* —
+**A catalog that is too new** tells you *"this catalog needs a newer Toft"* —
 not "sync failed", and never an empty gallery.
 
 ## Mirroring it
